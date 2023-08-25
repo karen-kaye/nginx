@@ -17,4 +17,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: verification de mon clone
+        run: |
+            ls -al
      
