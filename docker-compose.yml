@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  srv_nginx:
+    container_name: srv_nginx
+    image: srv/nginx:1
+    ports:
+      - 86:80
+    volumes:
+      - ./srv_nginx:/var/srv_nginx
+volumes:
+  srv_nginx:
+
+    
+
+
+
+
+
+
+
+
+    
