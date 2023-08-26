@@ -15,16 +15,16 @@ jobs:
     
     runs-on: ubuntu-latest
     steps:
-      - name: telecharger les sorces
+      - name: telecharger les sources
         uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-        
+
       - name: verification de mon clone
         run: |
           ls -al
-          docker build -t serveur-nginx
+          
 
 
       
