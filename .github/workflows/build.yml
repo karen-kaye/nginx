@@ -11,20 +11,22 @@ on:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy:
+  checkout:
     
     runs-on: ubuntu-latest
     steps:
       - name: telecharger les sorces
         uses: actions/checkout@v3
+
       - name: verification de mon clone
         run: |
           ls -al
-      - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file ma_page.html
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: nginx/serveur-nginx:latest
+        
+      
